@@ -8,4 +8,9 @@ router.get('/', async(req, res) => {
     res.json(tasks);
 });
 
+router.post('/', async(req, res) => {
+    new Task()
+    console.log(new Task());
+});
+
 module.exports = router;
