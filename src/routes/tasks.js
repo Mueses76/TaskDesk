@@ -9,8 +9,12 @@ router.get('/', async(req, res) => {
 });
 
 router.post('/', async(req, res) => {
-    new Task()
-    console.log(new Task());
+
+   const task =  new Task(req.body);
+   await task.save();
+    res.json({
+        status: 'Task Saved'
+    });
 });
 
 module.exports = router;
